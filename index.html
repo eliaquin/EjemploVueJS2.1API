@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="busqueda">
+        <form>
+            <input type="text" v-model="criterio">
+            <button type="button" @click="buscar" v-bind:disabled="criterio.length == 0">Buscar</button>
+        </form>
+        <div v-if="registros.length > 0">
+            <br>
+            <br> Filtro: <input type="text" v-model="filtro">
+            <br><br>
+            <table>
+                <tr>
+                    <th>Estatus</th>
+                    <th>Fecha</th>
+                    <th>Nombre</th>
+                    <th>RNC</th>
+                    <th>RazonSocial</th>
+                    <th>Sector</th>
+                    <th>Tipo</th>
+                </tr>
+                <tr v-for="registro in filtroNombre(filtro)">
+                    <td>{{registro.Estatus}}</td>
+                    <td>{{registro.Fecha}}</td>
+                    <td>{{registro.Nombre}}</td>
+                    <td>{{registro.RNC}}</td>
+                    <td>{{registro.RazonSocial}}</td>
+                    <td>{{registro.Sector}}</td>
+                    <td>{{registro.Tipo}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
