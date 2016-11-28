@@ -9,7 +9,7 @@
 <body>
     <div id="busqueda">
         <form>
-            <input type="text" v-model="criterio" @keydown.enter.prevent="buscar">
+            <input type="text" v-model="criterio" @keydown.enter.prevent ="buscar">
             <button type="button" @click="buscar" v-bind:disabled="criterio.length == 0">Buscar</button>
         </form>
         <div v-if="registros.length > 0">
